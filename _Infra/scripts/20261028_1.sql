@@ -11,14 +11,14 @@ declare
         var_temperature text;
 begin
 
-        var_pressure_value :=  round(public.fn_calc_header_pressure(743));
-        var_temperature_value := round( public.fn_calc_header_temperature(3));
+        var_pressure_value :=  round(public.fn_calc_header_pressure(757));
+        var_temperature_value := round( public.fn_calc_header_temperature(23));
 
         select
                 -- Дата
                 public.fn_calc_header_period(now()) as "ДДЧЧМ",
                 --Высота расположения метеопоста над уровнем моря.
-            lpad( 340::text, 4, '0' ) as "ВВВВ",
+            lpad( 60::text, 4, '0' ) as "ВВВВ",
                 -- Отклонение наземного давления атмосферы
                 lpad(
                                 case when var_pressure_value < 0 then
@@ -41,6 +41,6 @@ begin
 
                 raise notice '==============================';
                 raise notice 'Пример расчета метео приближенный';
-                raise notice 'ДДЧЧМ %, ВВВВ %,  БББ % , TT %',  var_period, var_height, var_pressure, var_temperature;
+                raise notice 'ДДЧЧМ: %, ВВВВ: %,  БББ: %, TT: %',  var_period, var_height, var_pressure, var_temperature;
 
 end $$;
