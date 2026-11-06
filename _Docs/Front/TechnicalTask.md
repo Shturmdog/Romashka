@@ -61,7 +61,7 @@ b54b5799dbf0   postgres:16.3                                "docker-entrypoint.s
 ```
 
 2. Установите в `Visual Studio Code` расширение https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql
-и подключите СУБД:
+и подключите СУБД:<br>
 ![](./3.png)
 
 **Внимание!** Пароль для доступа к MSSQL указывается в файле `.env`, ключ: `MSSQL_PASS`
